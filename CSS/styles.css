@@ -1,6 +1,7 @@
 #background {
     background: url('/img/background.png') no-repeat fixed;
     height: auto; /* Высота контента */
+    min-height: 100vh;
     background-size: cover; /* Высота фона */
 }
 .content{
@@ -8,6 +9,14 @@
     padding: 100px;
 }
 .DemoContent {
-    height: 100000px;
-    background-color: #FF000088;
+    height: 10000px;
+    background-color: #ff000088;
+}
+.DemoContent-row-even {
+    height: 2%;
+    background-color: #ffff0088;
+}
+.DemoContent-row-odd {
+    height: 2%;
+    background-color: #ff00ff88;
 }
