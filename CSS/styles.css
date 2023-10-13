@@ -1,0 +1,13 @@
+#background {
+    background: url('/img/background.png') no-repeat fixed;
+    height: auto; /* Высота контента */
+    background-size: cover; /* Высота фона */
+}
+.content{
+    position: relative;
+    padding: 100px;
+}
+.DemoContent {
+    height: 100000px;
+    background-color: #FF000088;
+}
