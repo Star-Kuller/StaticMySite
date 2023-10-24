@@ -4,15 +4,39 @@
     background-size: cover;
     min-height: 100vh;
 }
+
+@font-face {
+    font-family: 'Anybody-default';
+    src: url('/fonts/Anybody-VariableFont_wdth\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Anybody-default-italic';
+    src: url('/fonts/Anybody-Italic-VariableFont_wdth\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik-default';
+    src: url('/fonts/Rubik-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik-default-italic';
+    src: url('/fonts/Rubik-Italic-VariableFont_wght.ttf');
+}
+
 :root {
     --index: calc(1vh + 1vw);
 }
+
 .content{
     display: grid;
     grid-template: 15vh auto 17vh / 20vw 1fr 20vw;
     font-size: calc(var(--index) * 0.95);
     color: #ebe4d9;
+    font-family: 'Rubik-default';
 }
+
 .main {
     width: 100%;
     min-height: calc(var(--index) * 3);
@@ -25,4 +49,41 @@
     border-style: solid;
     border-radius: calc(var(--index) * 4);
     background-color: #1c1c1c88;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: #f3eee5;
+}
+
+h1, h2, h3, h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--index);
+}
+
+h1 {
+    font-size: calc(var(--index)*2.5);
+}
+
+h2 {
+    font-size: calc(var(--index)*2);
+}
+
+h3 {
+    font-size: calc(var(--index)*1.5);
+}
+
+h4 {
+    font-size: calc(var(--index)*1.15);
+}
+
+h5 {
+    font-size: calc(var(--index)*1.05);
+    margin: calc(var(--index)*1);
+}
+
+p {
+    margin: calc(var(--index)*1);
 }
