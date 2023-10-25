@@ -1,3 +1,11 @@
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+ScrollSmoother.create({
+    wrapper: '.content',
+    content: '.page-content',
+    smooth: 1.5
+})
+
 let originalHeight = 0;
 let originalWidth = 0;
 
@@ -24,3 +32,4 @@ $(window).scroll(() => {
 
     $("#background").css("background-position", `center ${topPx}px`);
 });
+

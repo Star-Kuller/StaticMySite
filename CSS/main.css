@@ -1,8 +1,9 @@
 #background {
-    background: url('/img/background.png') no-repeat fixed;
+    background: url('/img/background.png') fixed;
     height: auto;
     background-size: cover;
     min-height: 100vh;
+    transition: all 1s var(--ease-out-quad);
 }
 
 @font-face {
@@ -27,9 +28,10 @@
 
 :root {
     --index: calc(1vh + 1vw);
+    --ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }
 
-.content{
+.page-content{
     display: grid;
     grid-template: 15vh auto 17vh / 20vw 1fr 20vw;
     font-size: calc(var(--index) * 0.95);
@@ -59,7 +61,6 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4 {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: var(--index);
 }
 
@@ -86,4 +87,36 @@ h5 {
 
 p {
     margin: calc(var(--index)*1);
+}
+
+img {
+    display: block;
+    border-radius: calc(var(--index) * 3);
+    border-color: #0000005d;
+    border-width: 2px;
+    border-style: solid;
+    margin: calc(var(--index)*1.5) auto;
+    width: 75%;
+}
+
+.nav-menu {
+    background-color: #242424e3;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: calc(var(--index)*25);
+    max-height: 90vh;
+    width: calc(var(--index)*3.5);
+    transition: height .75s var(--ease-out-quad);
+    transition: width .75s var(--ease-out-quad);
+    border-top-right-radius: calc(var(--index)*3);
+    border-bottom-right-radius: calc(var(--index)*3);
+    border-color: #ffffff11;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.nav-menu:hover {
+    width: 19vw;
 }
