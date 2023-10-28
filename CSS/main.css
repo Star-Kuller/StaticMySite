@@ -6,6 +6,20 @@
     transition: all 1s var(--ease-out-quad);
 }
 
+::selection {
+    color: #141b26;
+    background: var(--selected-color);
+}
+
+a:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
 @font-face {
     font-family: 'Anybody-default';
     src: url('/fonts/Anybody-VariableFont_wdth\,wght.ttf');
@@ -29,6 +43,7 @@
 :root {
     --index: calc(1vh + 1vw);
     --ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    --selected-color: #ffd398;
 }
 
 .page-content{
@@ -89,7 +104,7 @@ p {
     margin: calc(var(--index)*1);
 }
 
-img {
+.main img {
     display: block;
     border-radius: calc(var(--index) * 3);
     border-color: #0000005d;
@@ -100,7 +115,7 @@ img {
 }
 
 .nav-menu {
-    background-color: #242424e3;
+    background-color: #242424bd;
     position: fixed;
     left: 0;
     top: 50%;
@@ -115,8 +130,191 @@ img {
     border-color: #ffffff11;
     border-width: 2px;
     border-style: solid;
+    transition-delay: .25s;
 }
 
 .nav-menu:hover {
     width: 19vw;
+    transition-delay: 0s;
+}
+
+.nav-menu__scroll {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90%;
+    height: 85%;
+    overflow: scroll;
+}
+
+.nav-menu__scroll::-webkit-scrollbar {
+    width: 0;
+}
+
+.nav-menu__page {
+    display: flex;
+    margin: calc(var(--index)*0.2);
+    border-radius: calc(var(--index)*0.75);
+}
+
+.nav-menu__page:hover {
+    background-color: #ffffff10;
+}
+
+.nav-menu__line {
+    min-height: calc(var(--index)*0.1);
+    width: 95%;
+    margin: calc(var(--index)*0.1) auto;
+    background-color: #ffffff83;
+}
+
+.nav-menu__icon {
+    min-width: calc(var(--index)*2.5);
+}
+
+.nav-menu__icon svg {
+    fill: #ffffffbe;
+    transition: fill 1s ease;
+}
+
+.nav-menu__page:hover .nav-menu__icon svg {
+    fill: var(--selected-color);
+
+}
+
+.nav-menu__name {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-family: 'Rubik-default';
+    font-size: .5vh;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.nav-menu:hover .nav-menu__name {
+    opacity: 0.8;
+    font-size: 3vh;
+}
+
+.nav-menu__page:hover .nav-menu__name {
+    color: var(--selected-color);
+}
+
+.profile {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: calc(var(--index)*1);
+    right: calc(var(--index)*1);
+    height: 12.5vh;
+    width: 22.5vw;
+    transition: .8s ease;
+    background-color: #242424bd;
+    border-radius: 12.5vh;
+    border-color: #ffffff11;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0 0.3vw;
+    color: #fff;
+    font-family: 'Rubik-default';
+    font-size: 1vw;
+}
+
+.profile:hover {
+    background-color: #494949bd;
+}
+
+.profile__icon{
+    min-height: 10vh;
+    min-width: 10vh;
+    height: 10vh;
+    width: 10vh;
+    background-color: rebeccapurple;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.profile__icon img{
+    height: 100%;
+}
+
+.profile__user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: calc(var(--index)*.2);
+}
+
+.profile__username {
+    transition: .8s ease;
+    font-size: calc(var(--index)*1);
+}
+
+.profile__role {
+    transition: .8s ease;
+    opacity: 1;
+    font-size: calc(var(--index)*0.75);
+}
+
+.profile__menu {
+    position: absolute;
+    top: 100%;
+    right: 2vw;
+    width: 70%;
+    height: 0;
+    opacity: 0;
+    background-color: red;
+    border-bottom-left-radius: calc(var(--index)*2);
+    border-bottom-right-radius: calc(var(--index)*2);
+    background-color: #242424bd;
+    border-color: #ffffff11;
+    border-width: 2px;
+    border-style: solid;
+    transition: 1s var(--ease-out-quad);
+}
+
+.profile:hover .profile__menu {
+    height: 12.5vh;
+    opacity: 1;
+}
+
+.profile__line {
+    min-height: calc(var(--index)*0.1);
+    width: 90%;
+    margin: calc(var(--index)*0.1) auto;
+    background-color: #ffffff83;
+}
+
+.profile__button, .profile__logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    width: 90%;
+    margin: calc(var(--index)*0.1) auto;
+    font-size: 0;
+    transition: 1s ease;
+    border-radius: calc(var(--index)*0.75);
+}
+
+.profile__button:hover {
+    color: var(--selected-color);
+    background-color: #ffffff10;
+}
+
+.profile__logout:hover {
+    color: var(--selected-color);
+    background-color: #ffffff10;
+}
+
+.profile:hover .profile__button, .profile:hover .profile__logout {
+    font-size: calc(var(--index)*0.9);
 }
