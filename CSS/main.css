@@ -64,7 +64,7 @@ a {
     border-color: #00000027;
     border-width: 2px;
     border-style: solid;
-    border-radius: calc(var(--index) * 4);
+    border-radius: calc(var(--index) * 3);
     background-color: #1c1c1c88;
 }
 
@@ -125,8 +125,8 @@ p {
     width: calc(var(--index)*3.5);
     transition: height .75s var(--ease-out-quad);
     transition: width .75s var(--ease-out-quad);
-    border-top-right-radius: calc(var(--index)*3);
-    border-bottom-right-radius: calc(var(--index)*3);
+    border-top-right-radius: calc(var(--index)*2);
+    border-bottom-right-radius: calc(var(--index)*2);
     border-color: #ffffff11;
     border-width: 2px;
     border-style: solid;
@@ -272,13 +272,13 @@ p {
     height: 0;
     opacity: 0;
     background-color: red;
-    border-bottom-left-radius: calc(var(--index)*2);
-    border-bottom-right-radius: calc(var(--index)*2);
+    border-bottom-left-radius: calc(var(--index)*1);
+    border-bottom-right-radius: calc(var(--index)*1);
     background-color: #242424bd;
     border-color: #ffffff11;
     border-width: 2px;
     border-style: solid;
-    transition: 1s var(--ease-out-quad);
+    transition: .75s var(--ease-out-quad);
 }
 
 .profile:hover .profile__menu {
@@ -301,20 +301,17 @@ p {
     width: 90%;
     margin: calc(var(--index)*0.1) auto;
     font-size: 0;
-    transition: 1s ease;
+    opacity: 0;
+    transition: .8s ease;
     border-radius: calc(var(--index)*0.75);
 }
 
-.profile__button:hover {
-    color: var(--selected-color);
-    background-color: #ffffff10;
-}
-
-.profile__logout:hover {
+.profile__button:hover, .profile__logout:hover {
     color: var(--selected-color);
     background-color: #ffffff10;
 }
 
 .profile:hover .profile__button, .profile:hover .profile__logout {
     font-size: calc(var(--index)*0.9);
+    opacity: 1;
 }
