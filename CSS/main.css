@@ -11,6 +11,10 @@
     background: var(--selected-color);
 }
 
+html {
+    font-family: 'Rubik-default';
+}
+
 a:focus {
     outline: none;
 }
@@ -158,6 +162,7 @@ p {
     display: flex;
     margin: calc(var(--index)*0.2);
     border-radius: calc(var(--index)*0.75);
+    transition: background-color .75s ease;
 }
 
 .nav-menu__page:hover {
@@ -189,7 +194,6 @@ p {
     display: flex;
     align-items: center;
     justify-content: center; 
-    font-family: 'Rubik-default';
     font-size: .5vh;
     height: 100%;
     width: 100%;
@@ -223,7 +227,6 @@ p {
     border-style: solid;
     padding: 0 0.3vw;
     color: #fff;
-    font-family: 'Rubik-default';
     font-size: 1vw;
 }
 
@@ -271,7 +274,6 @@ p {
     width: 70%;
     height: 0;
     opacity: 0;
-    background-color: red;
     border-bottom-left-radius: calc(var(--index)*1);
     border-bottom-right-radius: calc(var(--index)*1);
     background-color: #242424bd;
@@ -302,7 +304,9 @@ p {
     margin: calc(var(--index)*0.1) auto;
     font-size: 0;
     opacity: 0;
+    color: #fff;
     transition: .8s ease;
+    transition: color .25s ease;
     border-radius: calc(var(--index)*0.75);
 }
 
@@ -313,5 +317,116 @@ p {
 
 .profile:hover .profile__button, .profile:hover .profile__logout {
     font-size: calc(var(--index)*0.9);
+    opacity: 0.8;
+}
+
+.authenticate-button{
+    display: block;
+    position: absolute;
+    top: 2vh;
+    right: 2.5vw;
+    width: 15vw;
+    min-height: 5vw;
+    height: 10vh;
+    border-radius: calc(var(--index)*2);
+    color: #fff;
+    opacity: 0.8;
+    background-color: #2928289c;
+    border-color: #44444409;
+    border-width: 2px;
+    border-style: solid;
+    transition: color .25s ease;
+    transition: background-color .5s ease;
+    font-size: calc(var(--index)*0.9);
+}
+
+.authenticate-button:hover {
+    color: var(--selected-color);
+    background-color: #3b3b3b79;
+}
+
+.authenticate {
+    z-index: 10;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000079;
+}
+
+.authenticate__window {
+    position: absolute;
+    width: calc(var(--index)*19);
+    height: calc(var(--index)*23);
+    background-color: #252525;
+    border-radius: calc(var(--index)*2);
+}
+
+.authenticate__close {
+    position: absolute;
+    top: calc(var(--index)*0.5);
+    right: calc(var(--index)*1);
+    width: auto;
+    opacity: 0.5;
+    height: calc(var(--index)*1.5);
+    background-color: #8b25251e;
+    border-color: #ff000054;
+    border-radius: calc(var(--index)*2.5);
+    color: #ff0000cc;
+}
+
+.authenticate__close:hover {
     opacity: 1;
+}
+
+.authenticate__selector {
+    display: flex;
+    position: relative;
+    justify-content:space-around;
+    margin: calc(var(--index)*2.5)  calc(var(--index)*2.5)  calc(var(--index)*.5);
+    height:  calc(var(--index)*2);
+    color: #fff;
+    font-size:  calc(var(--index)*0.75);
+    font-weight: 900;
+}
+
+.authenticate__select{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: calc(var(--index)*2);
+    width: 40%;
+}
+
+.authenticate__select:hover {
+    background-color: #ffffff13;
+}
+
+.authenticate__select--selected, .authenticate__select--selected:hover {
+    background-color: #8a7868;
+}
+
+.authenticate__line {
+    height: calc(var(--index)*.1);
+    background-color: #fff;
+}
+
+.authenticate__login {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.authenticate__sumbit,
+.authenticate__forgot-password {
+    margin-top: 20px;
 }

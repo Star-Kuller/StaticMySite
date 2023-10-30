@@ -138,7 +138,7 @@
                     </a>
                 </div>
             </div>
-            <div class="profile">
+            <div class="profile" style="display: none;">
                 <div class="profile__icon">
                     <img src="img/icon.png" alt="icon">
                 </div>
@@ -147,9 +147,29 @@
                     <span class="profile__role">Администратор</span>
                 </div>
                 <div class="profile__menu">
-                    <div class="profile__button">Мой профиль</div>
+                    <a href="#" class="profile__button">Мой профиль</a>
                     <div class="profile__line"></div>
-                    <div class="profile__logout">Выйти</div>
+                    <a href="#" class="profile__logout">Выйти</a>
+                </div>
+            </div>
+            <button class="authenticate-button">Вход/Регистрация</button>
+            <div class="authenticate">
+                <div class="authenticate__window">
+                    <button class="authenticate__close">Закрыть</button>
+                    <div class="authenticate__selector">
+                        <div class="authenticate__select authenticate__select--selected">Вход</div>
+                        <div class="authenticate__select">Регистрация</div>
+                    </div>
+                    <form>
+                        <div class="authenticate__login">
+                            <span>Почта</span>
+                            <input type="email"/>
+                            <span>Пароль</span>
+                            <input type="password"/>
+                        </div>
+                        <button class="authenticate__sumbit">Подтвердить</button>
+                    </form>
+                    <div class="authenticate__forgot-password">Забыл пароль</div>
                 </div>
             </div>
         </div>
