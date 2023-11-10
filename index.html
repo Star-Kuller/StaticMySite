@@ -155,21 +155,27 @@
             <button class="authenticate-button">Вход/Регистрация</button>
             <div class="authenticate">
                 <div class="authenticate__window">
-                    <button class="authenticate__close">Закрыть</button>
-                    <div class="authenticate__selector">
-                        <div class="authenticate__select authenticate__select--selected">Вход</div>
-                        <div class="authenticate__select">Регистрация</div>
-                    </div>
-                    <form>
-                        <div class="authenticate__login">
-                            <span>Почта</span>
-                            <input type="email"/>
-                            <span>Пароль</span>
-                            <input type="password"/>
+                    <div class="authenticate__mode">
+                        <input type="checkbox" id="login-register">
+                        <div class="authenticate__mode-button">
+                            <label for="login-register"></label>
+                            <span class="authenticate__handle">
+                                <span class="authenticate__handle--login">login</span>
+                                <span class="authenticate__handle--register">register</span>
+                            </span>
                         </div>
-                        <button class="authenticate__sumbit">Подтвердить</button>
+                    </div>
+                    <form class="authenticate__login-form">
+                        <input type="email">
+                        <input type="password">
+                        <button>Войти</button>
                     </form>
-                    <div class="authenticate__forgot-password">Забыл пароль</div>
+                    <div class="authenticate__oauth">
+                        <div class="authenticate__line"><span>or</span></div>
+                        <div style="height: 50px; width: 50px; background-color: pink; margin: 10px;"></div>
+                        <div style="height: 50px; width: 50px; background-color: skyblue; margin: 10px;"></div>
+                        <div style="height: 50px; width: 50px; background-color: wheat; margin: 10px;"></div>
+                    </div>
                 </div>
             </div>
         </div>
