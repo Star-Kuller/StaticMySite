@@ -13,6 +13,7 @@
 
 html {
     font-family: 'Rubik-default';
+    outline: none;
 }
 
 a:focus {
@@ -21,6 +22,12 @@ a:focus {
 
 a {
     text-decoration: none;
+}
+
+input:focus {
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: var(--selected-color);
 }
 
 
@@ -438,11 +445,12 @@ p {
 }
 
 .authenticate__login-form {
-    width: 100%;
-    height: 65%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 65%;
 }
 
 .authenticate__oauth{
@@ -479,4 +487,43 @@ p {
     border-radius: calc(var(--index)*1.65);
     border:solid #ffbf6b;
     border-width: 2px;
+}
+
+.authenticate__window input[type="email"], .authenticate__window input[type="password"] {
+    width: 80%;
+    height: 10%;
+    box-shadow: 0 0 calc(var(--index) * 0.5) 0 #ffd06b5d;
+    border: 1px solid #353535;
+    margin: calc(var(--index) * 1);
+    border-radius: 10px;
+    background-color: #353535;
+}
+
+.authenticate__login-form .remember-me {
+    height: calc(var(--index) * 1.5);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.authenticate__login-form .remember-me input{
+    display: none;
+}
+
+.authenticate__login-form .remember-me .checkmark {
+    display: flex;
+    height: calc(var(--index) * 1.25);
+    width: calc(var(--index) * 1.25);
+    background-color: #353535;
+    border-radius: 25%;
+    border: 1px solid #3d3d3d;
+}
+  
+.authenticate__login-form .remember-me input[type="checkbox"]:checked ~ .checkmark .circle {
+    margin: auto;
+    height: 70%;
+    width: 70%;
+    border-radius: 100%;
+    box-shadow: 0 0 calc(var(--index) * 0.5) 0 #ffd06b5d;
+    background-color: #d19c56;
 }
